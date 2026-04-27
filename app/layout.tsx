@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Instrument_Serif, Space_Mono } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/lib/contexts/AuthContext";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "sonner";
 import OfflineBanner from "@/components/shared/OfflineBanner";
@@ -58,13 +57,11 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${instrumentSerif.variable} ${spaceMono.variable} antialiased`}
       >
-        <AuthProvider>
-          <PwaBootstrap />
-          {children}
-          <Toaster />
-          <SonnerToaster richColors position="top-center" duration={5000} />
-          <OfflineBanner />
-        </AuthProvider>
+        <PwaBootstrap />
+        {children}
+        <Toaster />
+        <SonnerToaster richColors position="top-center" duration={5000} />
+        <OfflineBanner />
       </body>
     </html>
   );
