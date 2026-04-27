@@ -43,7 +43,6 @@ export default function TripReceiptCard() {
 
   return (
     <motion.article
-      initial={reducedMotion ? false : { opacity: 0, y: 12 }}
       animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
       transition={reducedMotion ? undefined : { duration: 0.6 }}
       className="w-full rounded-2xl border border-sky-900/70 bg-[#0b1f3a] p-6 shadow-[0_24px_100px_rgba(0,0,0,0.45)]"
@@ -138,7 +137,7 @@ export default function TripReceiptCard() {
               animate={reducedMotion ? undefined : { opacity: 1, y: 0 }}
               exit={reducedMotion ? undefined : { opacity: 0, y: -8 }}
               transition={reducedMotion ? undefined : { duration: 0.3 }}
-              className="font-space-mono text-sm text-amber-300"
+              className="font-space-mono text-sm text-cyan-400"
             >
               Minting on Solana...
             </motion.p>

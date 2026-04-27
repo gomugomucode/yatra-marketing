@@ -57,8 +57,8 @@ export default function WaitlistForm({ compact = false, className = '' }: Waitli
         animate={{ opacity: 1, y: 0 }}
         className={`w-full py-6 text-center ${className}`}
       >
-        <div className="mx-auto w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center mb-6">
-          <svg className="w-8 h-8 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="mx-auto w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+          <svg className="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -82,12 +82,12 @@ export default function WaitlistForm({ compact = false, className = '' }: Waitli
             value={name}
             onChange={(event) => setName(event.target.value)}
             placeholder="John Doe"
-            className="w-full h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white placeholder:text-zinc-600 transition-all hover:bg-white/10 focus:border-amber-500/50 focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+            className="w-full h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white placeholder:text-zinc-600 transition-all hover:bg-white/10 focus:border-cyan-500/50 focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-cyan-500/50"
           />
         </div>
 
         <div className={`flex flex-col gap-2 text-left ${compact ? 'flex-1' : ''}`}>
-          {!compact && <label htmlFor="email" className="text-xs font-medium text-zinc-400 ml-1">Email Address <span className="text-amber-500">*</span></label>}
+          {!compact && <label htmlFor="email" className="text-xs font-medium text-zinc-400 ml-1">Email Address <span className="text-cyan-400">*</span></label>}
           <input
             id="email"
             type="email"
@@ -97,14 +97,14 @@ export default function WaitlistForm({ compact = false, className = '' }: Waitli
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             placeholder="john@example.com"
-            className="w-full h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white placeholder:text-zinc-600 transition-all hover:bg-white/10 focus:border-amber-500/50 focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+            className="w-full h-12 rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white placeholder:text-zinc-600 transition-all hover:bg-white/10 focus:border-cyan-500/50 focus:bg-white/10 focus:outline-none focus:ring-1 focus:ring-cyan-500/50"
           />
         </div>
 
         <button
           type="submit"
           disabled={status === 'loading'}
-          className={`group relative h-12 rounded-xl bg-amber-500 px-8 text-sm font-semibold text-black transition-all hover:bg-amber-400 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-amber-500 ${compact ? '' : 'mt-2 w-full'}`}
+          className={`group relative h-12 rounded-xl bg-cyan-500 px-8 text-sm font-semibold text-black transition-all hover:bg-cyan-400 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-cyan-500 ${compact ? '' : 'mt-2 w-full'}`}
         >
           <span className="flex items-center justify-center gap-2">
             {status === 'loading' ? (
