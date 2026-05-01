@@ -53,10 +53,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${dmSans.variable} ${instrumentSerif.variable} ${spaceMono.variable} antialiased`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('yatra-theme');if(t==='dark'){document.documentElement.classList.add('dark')}if(t==='light'){document.documentElement.classList.remove('dark')}}catch(e){}})();`,
+          }}
+        />
         <PwaBootstrap />
         {children}
         <Toaster />

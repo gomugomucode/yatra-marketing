@@ -44,53 +44,95 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root,
-.dark {
-  /* Sophisticated Cyber-Palette */
+:root {
+  /* Light premium palette (default) */
   --radius: 0.625rem;
 
-  --background: #05070a; /* Obsidian Black */
-  --foreground: #f8faff; /* Soft off-white */
+  --background: #fffdf8;
+  --foreground: #172033;
 
-  --card: #070b12;
-  --card-foreground: #f8faff;
+  --card: #ffffff;
+  --card-foreground: #172033;
 
-  --popover: #070b12;
-  --popover-foreground: #f8faff;
+  --popover: #ffffff;
+  --popover-foreground: #172033;
 
-  --primary: #00f2ff; /* Electric Cyan */
-  --primary-foreground: #05070a;
+  --primary: #0ea5e9;
+  --primary-foreground: #ffffff;
 
-  --secondary: #7000ff; /* Deep Plasma Purple */
-  --secondary-foreground: #f8faff;
+  --secondary: #f2f6ff;
+  --secondary-foreground: #172033;
 
-  --muted: #111827;
-  --muted-foreground: #9ca3af;
+  --muted: #f8f3ea;
+  --muted-foreground: #5f6b85;
 
-  --accent: #00f2ff;
-  --accent-foreground: #05070a;
+  --accent: #f2f6ff;
+  --accent-foreground: #172033;
 
   --destructive: #f97373;
 
-  --border: #111827;
-  --input: #111827;
-  --ring: #00f2ff;
+  --border: #e8e5de;
+  --input: #e8e5de;
+  --ring: #0ea5e9;
 
-  /* Charts roughly aligned to cyber palette */
-  --chart-1: #00f2ff;
-  --chart-2: #7000ff;
-  --chart-3: #00ff94;
-  --chart-4: #22d3ee;
+  --chart-1: #0ea5e9;
+  --chart-2: #f59e0b;
+  --chart-3: #22c55e;
+  --chart-4: #38bdf8;
   --chart-5: #a855f7;
 
-  --sidebar: #05070a;
-  --sidebar-foreground: #e5e7eb;
-  --sidebar-primary: #00f2ff;
-  --sidebar-primary-foreground: #05070a;
-  --sidebar-accent: #111827;
-  --sidebar-accent-foreground: #e5e7eb;
-  --sidebar-border: #111827;
-  --sidebar-ring: #00f2ff;
+  --sidebar: #fffdf8;
+  --sidebar-foreground: #172033;
+  --sidebar-primary: #0ea5e9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f2f6ff;
+  --sidebar-accent-foreground: #172033;
+  --sidebar-border: #e8e5de;
+  --sidebar-ring: #0ea5e9;
+
+  /* Yatra semantic design tokens */
+  --yatra-surface: #fff7eb;
+  --yatra-stroke: #ece5d8;
+  --yatra-accent-50: #fff3df;
+  --yatra-accent-100: #ffe7c2;
+  --yatra-accent-200: #ffd7a0;
+  --yatra-accent-600: #ea8b2d;
+  --yatra-accent-700: #c8691d;
+}
+
+.dark {
+  --background: #070d1a;
+  --foreground: #edf2ff;
+  --card: #0d1628;
+  --card-foreground: #edf2ff;
+  --popover: #0d1628;
+  --popover-foreground: #edf2ff;
+  --primary: #38bdf8;
+  --primary-foreground: #05101f;
+  --secondary: #1a2539;
+  --secondary-foreground: #edf2ff;
+  --muted: #182438;
+  --muted-foreground: #94a3bd;
+  --accent: #182438;
+  --accent-foreground: #edf2ff;
+  --border: #263349;
+  --input: #263349;
+  --ring: #38bdf8;
+  --sidebar: #070d1a;
+  --sidebar-foreground: #edf2ff;
+  --sidebar-primary: #38bdf8;
+  --sidebar-primary-foreground: #05101f;
+  --sidebar-accent: #1a2539;
+  --sidebar-accent-foreground: #edf2ff;
+  --sidebar-border: #263349;
+  --sidebar-ring: #38bdf8;
+  --yatra-surface: #111b2f;
+  --yatra-stroke: #263349;
+  --yatra-accent-50: #1e2434;
+  --yatra-accent-100: #2d3446;
+  --yatra-accent-200: #3a4358;
+  --yatra-accent-600: #f09d45;
+  --yatra-accent-700: #f6b46c;
 }
 
 @layer base {
@@ -99,14 +141,20 @@
   }
 
   html {
-    background-color: #05070a;
+    background-color: var(--background);
+    scroll-behavior: smooth;
   }
 
   body {
     @apply text-foreground;
-    background:
-      radial-gradient(circle at top, #111827 0, #05070a 45%, #020309 100%);
+    background: var(--background);
   }
+}
+
+.yatra-surface {
+  background-color: color-mix(in oklab, var(--card) 92%, white 8%);
+  border: 1px solid var(--yatra-stroke);
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.06);
 }
 
 @media (prefers-reduced-motion: reduce) {
